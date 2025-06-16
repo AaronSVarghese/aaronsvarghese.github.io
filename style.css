@@ -1,80 +1,222 @@
-/* CLEANED UP CSS WITH FIXES */
-body {
+* {
   margin: 0;
-  background: radial-gradient(circle, #011f4b, #03396c, #005b96);
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  color: yellow;
-  font-family: "Times New Roman", Times, serif;
-}
-
-.canvas {
-  width: 100vmin;
-  height: 100vmin;
-  background-color: #f0f0f0;
-  border: 5px solid #333;
-  border-radius: 15px;
+.sky {
+  background: linear-gradient(to bottom, #88c9f9, #e0f7fa);
+  width: 100vw;
+  height: 100vh;
   position: relative;
-  display: block;
-  margin: 50px auto;
 }
 
 .head {
-  width: 20%;
-  height: 20%;
-  background: #fff;
-  border-radius: 100% / 90% 90% 110% 110%;
-  position: absolute;
-  top: 28%;
-  left: 35%;
-  transform: translateX(50%);
-  box-shadow: 0 0.25vmin 0 1vmin;
-}
-
-.scarf, .scarf2 {
-  width: 2%;
+  width: 10%;
   height: 10%;
-  background: red;
-  border-radius: 125% 60% 60% 150% / 100%;
+  background: white;
+  border-radius: 50%;
   position: absolute;
-  box-shadow: 0 0.25vmin 0 1vmin;
-}
-
-.scarf {
-  top: 45%;
-  left: 43%;
-  transform: rotate(270deg);
-}
-
-.scarf2 {
-  top: 42%;
-  left: 53.3%;
-  transform: rotate(230deg);
+  top: 20%;
+  left: 45%;
+  transform: translateX(50%);
 }
 
 .body {
-  width: 30%;
-  height: 30%;
-  background: #fff;
-  border-radius: 100% / 110% 110% 90% 90%;
+  width: 10%;
+  height: 20%;
+  background: white;
+  border-radius: 50% / 30%;
   position: absolute;
-  bottom: 21.1%;
-  left: 30%;
-  transform: translateX(0);
-  box-shadow: 0 0.25vmin 0 1vmin;
+  top: 30%;
+  left: 45%;
+}
+
+.hand1,
+.hand2 {
+  width: 5%;
+  height: 2%;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 35%;
+}
+
+.hand1 {
+  left: 40%;
+}
+
+.hand2 {
+  left: 60%;
+}
+
+.bell1 {
+  width: 2%;
+  height: 2%;
+  background: rgb(70, 57, 57);
+  border-radius: 100% 90% 110% 100%;
+  position: absolute;
+  top: 32.5%;
+  left: 47.5%;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vmin;
+}
+
+.bell2 {
+  width: 1%;
+  height: 1%;
+  background: rgb(255, 255, 255);
+  border-radius: 100% 90% 110% 100%;
+  position: absolute;
+  top: 32.5%;
+  left: 37.5%;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vmin;
+}
+
+.eye1,
+.eye2 {
+  width: 1%;
+  height: 1%;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 22.5%;
+  box-shadow: 0 0 0 0.5vmin;
+}
+
+.eye1 {
+  left: 48%;
+}
+
+.eye2 {
+  left: 52%;
 }
 
 .nose {
-  width: 10%;
-  height: 5%;
+  width: 2%;
+  height: 1%;
   background: orange;
-  border-radius: 125% 60% 60% 150% / 100%;
   position: absolute;
-  top: 35%;
-  left: 47%;
+  top: 24%;
+  left: 50%;
   transform: translateX(-100%);
   box-shadow: 0 0 0 0.5vmin;
+}
+
+.button1,
+.button2,
+.button3 {
+  width: 1%;
+  height: 1%;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+}
+
+.button1 {
+  top: 35%;
+}
+
+.button2 {
+  top: 38%;
+}
+
+.button3 {
+  top: 41%;
+}
+
+[class^="Tree-ball"] {
+  width: 1%;
+  height: 1%;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 0 0.5vmin;
+}
+
+/* Example positions */
+.Tree-ball1 { top: 50%; left: 20%; }
+.Tree-ball2 { top: 52%; left: 22%; }
+.Tree-ball3 { top: 54%; left: 24%; }
+.Tree-ball4 { top: 56%; left: 26%; }
+.Tree-ball5 { top: 58%; left: 28%; }
+.Tree-ball6 { top: 60%; left: 30%; }
+.Tree-ball7 { top: 62%; left: 32%; }
+.Tree-ball8 { top: 64%; left: 34%; }
+.Tree-ball9 { top: 66%; left: 36%; }
+.Tree-ball10 { top: 68%; left: 38%; }
+.Tree-ball11 { top: 70%; left: 40%; }
+.Tree-ball12 { top: 72%; left: 42%; }
+.Tree-ball13 { top: 74%; left: 44%; }
+.Tree-ball14 { top: 76%; left: 46%; }
+.Tree-ball15 { top: 78%; left: 48%; }
+
+.Tree-star {
+  width: 3%;
+  height: 3%;
+  background: yellow;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  position: absolute;
+  top: 45%;
+  left: 30%;
+}
+
+.Tree-star-glow {
+  width: 5%;
+  height: 5%;
+  background: rgba(255, 255, 0, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 44%;
+  left: 29%;
+}
+
+.house {
+  width: 15%;
+  height: 15%;
+  background: #f1c40f;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+}
+
+.roof {
+  width: 0;
+  height: 0;
+  border-left: 7.5% solid transparent;
+  border-right: 7.5% solid transparent;
+  border-bottom: 10% solid #c0392b;
+  position: absolute;
+  top: 50px;
+  left: 10%;
+}
+
+.house-window1,
+.house-window2 {
+  width: 3%;
+  height: 3%;
+  background: #3498db;
+  position: absolute;
+  bottom: 20%;
+}
+
+.house-window1 {
+  left: 12%;
+}
+
+.house-window2 {
+  left: 20%;
+}
+
+.house-door {
+  width: 4%;
+  height: 6%;
+  background: #8e44ad;
+  position: absolute;
+  bottom: 0;
+  left: 16%;
 }
 
 
