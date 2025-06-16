@@ -1,217 +1,144 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  overflow: hidden;
-  font-family: sans-serif;
-}
-
-.sky {
-  width: 100vw;
+  margin: 0;
+  background: linear-gradient(to bottom, #87ceeb, #ffffff);
   height: 100vh;
-  background: linear-gradient(to bottom, #3498db, #ecf0f1);
-  position: relative;
   overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Snowfall animation */
-.snow::before {
-  content: '';
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background-image: radial-gradient(white 1px, transparent 1px);
-  background-size: 10px 10px;
-  animation: snowfall 10s linear infinite;
-  opacity: 0.5;
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
-@keyframes snowfall {
-  0% { transform: translateY(-100px); }
-  100% { transform: translateY(100vh); }
+.title {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 2px 2px 8px #ff0000;
+  margin-top: 30px;
+  animation: glow 2s infinite alternate;
 }
 
-/* Tree */
-.tree {
-  position: absolute;
-  left: 10%;
-  bottom: 10%;
-  width: 80px;
-  height: 200px;
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px red;
+  }
+  to {
+    text-shadow: 0 0 30px yellow;
+  }
 }
 
-.layer {
-  width: 0;
-  height: 0;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  position: absolute;
-  left: 0;
-}
-
-.layer1 {
-  top: 20px;
-  border-bottom: 40px solid #2ecc71;
-}
-
-.layer2 {
-  top: 50px;
-  border-bottom: 50px solid #27ae60;
-}
-
-.layer3 {
-  top: 90px;
-  border-bottom: 60px solid #1e8449;
-}
-
-.trunk {
-  width: 20px;
-  height: 30px;
-  background: #8e5c3a;
-  position: absolute;
-  bottom: 0;
-  left: 30px;
-}
-
-/* Star */
-.star {
-  position: absolute;
-  top: 0;
-  left: 26px;
-  width: 20px;
-  height: 20px;
-  background: yellow;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  animation: twinkle 1.5s infinite;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.1); }
-}
-
-/* Baubles */
-.bauble {
-  width: 8px;
-  height: 8px;
-  background: red;
-  border-radius: 50%;
-  position: absolute;
-}
-
-/* Snowman */
 .snowman {
   position: absolute;
-  right: 15%;
-  bottom: 10%;
+  left: 100px;
+  bottom: 50px;
 }
 
-.body {
+.head, .body, .bottom {
   background: white;
+  border: 3px solid black;
   border-radius: 50%;
-  position: absolute;
-}
-
-.bottom {
-  width: 60px;
-  height: 60px;
-  bottom: 0;
-  left: 0;
-}
-
-.middle {
-  width: 45px;
-  height: 45px;
-  bottom: 45px;
-  left: 7px;
+  margin: auto;
 }
 
 .head {
-  width: 30px;
-  height: 30px;
-  bottom: 80px;
-  left: 15px;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  z-index: 2;
 }
 
-.eye {
-  width: 5px;
-  height: 5px;
-  background: black;
-  border-radius: 50%;
-  position: absolute;
-  top: 87%;
+.body {
+  width: 80px;
+  height: 80px;
+  margin-top: -20px;
+  z-index: 1;
 }
 
-.eye1 {
-  left: 18px;
-}
-
-.eye2 {
-  left: 26px;
+.bottom {
+  width: 100px;
+  height: 100px;
+  margin-top: -30px;
 }
 
 .nose {
   width: 10px;
-  height: 5px;
+  height: 20px;
   background: orange;
   position: absolute;
-  top: 90%;
-  left: 22px;
-  transform: rotate(20deg);
+  left: 50%;
+  top: 25px;
+  transform: translateX(-50%);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
-/* Buttons on snowman */
-.button {
-  width: 6px;
-  height: 6px;
+.eyes::before, .eyes::after {
+  content: '';
+  width: 8px;
+  height: 8px;
   background: black;
   border-radius: 50%;
   position: absolute;
-  left: 27px;
+  top: 15px;
 }
 
-/* House */
-.house {
-  position: absolute;
-  bottom: 10%;
-  left: 60px;
-  width: 100px;
-  height: 100px;
-  background: #e74c3c;
-  z-index: 2;
+.eyes::before {
+  left: 18px;
+}
+.eyes::after {
+  right: 18px;
 }
 
-.roof {
+.tree {
   position: absolute;
-  top: -50px;
-  left: 0;
+  right: 150px;
+  bottom: 60px;
+  text-align: center;
+}
+
+.triangle {
   width: 0;
   height: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-bottom: 50px solid #c0392b;
+  border-bottom: 40px solid green;
+  margin: -10px auto;
 }
 
-.window {
-  position: absolute;
+.trunk {
   width: 20px;
-  height: 20px;
-  background: #3498db;
-  top: 30px;
-  left: 15px;
+  height: 40px;
+  background: brown;
+  margin: auto;
 }
 
-.door {
+.star {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid yellow;
+  margin: auto;
+}
+
+.snowflakes::before, .snowflakes::after {
+  content: '❄️❅❆❄️❅❆';
   position: absolute;
-  width: 30px;
-  height: 50px;
-  background: #6e2c00;
-  bottom: 0;
-  left: 35px;
+  top: -10%;
+  font-size: 2rem;
+  width: 100%;
+  animation: snow 10s linear infinite;
 }
 
+@keyframes snow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
 
 
