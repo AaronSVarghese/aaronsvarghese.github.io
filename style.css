@@ -1,168 +1,585 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    min-height: 100vh;
-    position: relative;
-    background-color: #a8c9e6;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+  margin: 0;
+  background: radial-gradient(circle, #011f4b, #03396c, #005b96);
 }
 
-.christmas-tree {
-    position: relative;
-    width: 500px;
-    height: 500px;
-    margin: 20px;
-    border-radius: 120px;
+h1{
+  color: yellow;
+  font-family: "Times New Roman", Times, serif;
 }
 
-.triangle1 {
-    position: absolute;
-    margin-left: 200px;
-    margin-top: 20px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 50px 100px 50px;
-    border-color: transparent transparent green transparent;
-    -webkit-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .5));
-    z-index: 1;
+.canvas {
+  width: 100vmin; /* Responsive size */
+  height: 100vmin; /* Responsive size */
+  background-color: #f0f0f0; /* Light grey background */
+  border: 5px solid #333; /* Border for the canvas */
+  border-radius: 15px; /* Rounded corners */
+  position: relative; /* So that child items can be positioned absolutely inside */
+  display: block;
+  margin: 50px auto; /* Center the canvas */
 }
 
-.triangle2 {
-    position: absolute;
-    margin-left: 150px;
-    margin-top: 50px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 100px 200px 100px;
-    border-color: transparent transparent green transparent;
-    -webkit-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .5));
+.head{
+  width: 20%;
+  height: 20%;
+  background: #fff;
+  border-radius: 100% / 90% 90% 110% 110%;
+  position: absolute;
+  top: 28%;
+  left: 35%;
+  transform: translteX(50%);
+  box-shadow: 0 0.25vmin 0 1vmin;
 }
 
-.triangle3 {
-    position: absolute;
-    margin-top: 100px;
-    margin-left: 100px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 150px 300px 150px;
-    border-color: transparent transparent green transparent;
-    -webkit-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, .5));
-    z-index: -3;
+.scarf{
+  width: 2%;
+  height: 10%;
+  background: red;
+  border-radius: 125% 60% 60% 150% / 100%;
+  position: absolute;
+  top: 45%;
+  left: 43%;
+  transform: rotate(270deg);
+  box-shadow: 0 0.25vmin 0 1vmin;
+}
+.scarf2{
+  width: 2%;
+  height: 10%;
+  background: red;
+  border-radius: 125% 60% 60% 150% / 100%;
+  position: absolute;
+  top: 42%;
+  left: 53.3%;
+  transform: rotate(230deg);
+  box-shadow: 0 0.25vmin 0 1vmin;
 }
 
-.box {
-    position: absolute;
-    margin-top: 390px;
-    margin-left: 230px;
-    content: '';
-    width: 40px;
-    height: 60px;
-    background: #964b00;
-    z-index: -4;
-    box-shadow: 0 1px 2px;
+.body{
+  width: 30%;
+  height: 30%;
+  background: #fff;
+  border-radius: 100% / 110% 110% 90% 90%;
+  position: absolute;
+  bottom: 21.1%;
+  left: 30%;
+  /*transform: translteX(50%);*/
+  transform: rotate(deg);
+  box-shadow: 0 0.25vmin 0 1vmin;
 }
 
-.ornament {
-    position: absolute;
-    width: 5%;
-    height: 5%;
-    border-radius: 50%;
-    z-index: 4;
+.nose{
+  width: 10%;
+  height: 5%;
+  background: orange;
+  border-radius: 125% 60% 60% 150% / 100%;
+  position: absolute;
+  top: 35%;
+  left: 47%;
+  transform: translateX(-100%);
+  box-shadow: 0 0 0 0.5vin;
 }
 
-.or1 {
-    left: 50%;
-    top: 20%;
-    background: #FF4500;
-    box-shadow: 0 0 15px #FF4500,
-        0 0 30px #FF4500,
-        0 0 45px #FF4500,
-        0 0 60px #FF4500;
+.mouth {
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background: black;
+  top: 300px;
+  left: 275px;
+  transform: rotate(0deg);
 }
 
-.or2 {
-    left: 40%;
-    top: 40%;
-    background: #ff308f;
-    box-shadow: 0 0 15px #ff308f,
-        0 0 30px #ff308f,
-        0 0 45px #ff308f,
-        0 0 60px #ff308f;
+.teeth{
+  position: absolute;
+  width: 25px;
+  height: 20px;
+  border-radius: 0 0 50% 50%;
+  background: rgb(230, 224, 224);
+  top: 305px;
+  left: 315px;
 }
 
-.or3 {
-    left: 60%;
-    top: 50%;
-    background: #ff0;
-    box-shadow: 0 0 15px #ff0,
-        0 0 30px #ff0,
-        0 0 45px #ff0,
-        0 0 60px #ff0;
+
+.teeth2{
+  position: absolute;
+  width: 25px;
+  height: 20px;
+  border-radius: 0 0 50% 50%;
+  background: rgb(230, 224, 224);
+  top: 305px;
+  left: 300px;
 }
 
-.or4 {
-    left: 34%;
-    top: 62%;
-    background: #0f0;
-    box-shadow: 0 0 15px #0f0,
-        0 0 30px #0f0,
-        0 0 45px #0f0,
-        0 0 60px #0f0;
+
+.eye1{
+  width: 3%;
+  height:3%;
+  background: black;
+  border-radius: 100% 90% 110% 100%;
+  position: absolute;
+  top: 32%;
+  left: 37%;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
 }
 
-.or5 {
-    left: 55%;
-    top: 70%;
-    background: #df2fff;
-    box-shadow: 0 0 15px #df2fff,
-        0 0 30px #df2fff,
-        0 0 45px #df2fff,
-        0 0 60px #df2fff;
+
+.eye2{
+  width: 3%;
+  height: 3%;
+  background: black;
+  border-radius: 100% 90% 110% 100%;
+  position: absolute;
+  top: 32%;
+  left: 47%;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
 }
 
-#snowman {
-    background-repeat: no-repeat;
-    width: 30em;
-    height: 30em;
-    background-image:
-        radial-gradient(ellipse, black 46%, transparent 50%),
-        radial-gradient(ellipse, silver 20%, slategray 35%, DarkSlateGray 45%, black 50%, transparent 50%),
-        linear-gradient(black, black),
-        radial-gradient(ellipse, silver 20%, slategray 35%, DarkSlateGray 45%, black 50%, transparent 50%),
-        radial-gradient(ellipse, black 47%, transparent 50%),
-        linear-gradient(#db2228, #db2228),
-        linear-gradient(40deg, transparent 49.5%, #db2228 50%, #db2228 53.5%, transparent 54%),
-        radial-gradient(circle, #db2228 41%, transparent 50%),
-        radial-gradient(circle, #db2228 41%, transparent 50%),
-        linear-gradient(-130deg, tomato 20%, transparent 21%),
-        radial-gradient(circle, black 41%, transparent 50%),
-        radial-gradient(circle, black 41%, transparent 50%),
-        radial-gradient(circle, black 41%, transparent 50%),
-        radial-gradient(circle, black 41%, transparent 50%),
-        radial-gradient(circle, black 41%, transparent 50%),
-        radial-gradient(circle, Snow 30%, #ededed 49%, transparent 50%),
-        radial-gradient(circle, Snow 30%, #ededed 49%, transparent 50%),
-        radial-gradient(circle, Snow 30%, #ededed 49%, transparent 50%),
-        linear-gradient(30deg, transparent 49%, black 50%, black 53%, transparent 54%),
-        linear-gradient(-30deg, transparent 49%, black 50%, black 53%, transparent 54%),
-        linear-gradient(50deg, transparent 49%, black 50%, black 53%, transparent 54%),
-        linear-gradient(10deg, transparent 49%, black 50%, black 53%, transparent 54%),
-        linear-gradient(120deg, transparent 49%, black 50%, black 53%, transparent 54%),
-        linear-gradient(177deg, transparent 49%, black 50%, black 53%, transparent 54%);
-    background-size:
-        20% 5%, 20% 5%, 14% 12%, 20% 5%, 30% 5%, 16% 3%, 6% 65%, 4.5% 4.5%, 4.5% 4.5%, 5% 10%, 3% 3%, 3% 3%,
-        3% 3%, 3% 3%, 3% 3%, 30% 30%, 40% 40%, 50% 50%, 15% 15%, 15% 15%, 16% 5%, 5% 15%, 14% 5%, 5% 15%;
-    background-position:
-        50% 12%, 50% 12.75%, 50% 16%, 50% 24%, 50% 26%, 50% 44.5%, 55% 45.5%, 42% 44.5%, 57.75% 44.5%, 49% 40%,
-        53% 32%, 47% 32%, 50%, 50% 55%, 50% 60%, 50% 30%, 50% 60%, 50% 110%, 25% 50%, 75% 50%, 20% 46%, 23% 48%,
-        80% 45%, 78% 47%;
+.bell1{
+  width: 2%;
+  height: 2%;
+  background: rgb(70, 57, 57);
+  border-radius: 100% 90% 110% 100%;
+  position: absolute;
+  top: 32.5%;
+  left: 47.5%;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.bell2{
+  width: 1%;
+  height: 1%;
+  background: rgb(255, 255, 255);
+  border-radius: 100% 90% 110% 100%;
+  position: absolute;
+  top: 32.5%;
+  left: 37.5%;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.bell1{
+  width: 1%;
+  height: 1%;
+  background: rgb(255, 255, 255);
+  border-radius: 100% 90% 110% 100%;
+  position: absolute;
+  top: 32.5%;
+  left: 47.5%;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.hat{
+  width: 20%;
+  height: 10%;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 22%;
+  left: 35%;
+
+}
+
+.hat2{
+  width: 10%;
+  height: 5%;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}
+
+/*left hand*/
+.hand1{
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background: black;
+  top: 419px;
+  left: 130px;
+  transform: rotate(0deg);
+}
+
+.finger1-left{
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background: brown;
+  top: 400px;
+  left: 100px;
+  transform: rotate(70deg);
+}
+
+.finger2-left{
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background: brown;
+  top: 419px;
+  left: 90px;
+  transform: rotate(0deg);
+}
+
+.finger3-left{
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background: brown;
+  top: 444px;
+  left: 102px;
+  transform: rotate(290deg);
+}
+
+/*right hand*/
+.hand2{
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background: black;
+  top: 419px;
+  left: 425px;
+  transform: rotate(0deg);
+}
+
+.finger1-right{
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background: brown;
+  top: 395px;
+  left: 505px;
+  transform: rotate(290deg);
+}
+
+.finger2-right{
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background: brown;
+  top: 419px;
+  left: 520px;
+  transform: rotate(0deg);
+}
+
+.finger3-right{
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  border-radius: 0 0 50% 50%;
+  background: brown;
+  top: 440px;
+  left: 505px;
+  transform: rotate(255deg);
+}
+
+.buttons1{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 100% 90% 110% 100%;
+  background: black;
+  top: 440px;
+  left: 320px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.buttons2{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 100% 90% 110% 100%;
+  background: black;
+  top: 460px;
+  left: 320px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.buttons3{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 100% 90% 110% 100%;
+  background: black;
+  top: 480px;
+  left: 320px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.buttons4{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 100% 90% 110% 100%;
+  background: black;
+  top: 500px;
+  left: 320px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+/*Christmas Tree*/
+
+.Trunk{
+  position: absolute;
+  width: 40px;
+  height: 100px;
+  border-radius: 2%;
+  background: brown;
+  top: 280px;
+  left: 590px;
+}
+.Tree-1{
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  background: rgb(10, 110, 18);
+  top: 60px;
+  left: 600px;
+}
+.Tree-2{
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  background: green;
+  top: 100px;
+  left: 580px;
+}
+
+.Tree-3{
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background: green;
+  top: 140px;
+  left: 560px;
+}
+
+.Tree-4{
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  background: green;
+  top: 180px;
+  left: 540px;
+}
+
+.Tree-5{
+  position: absolute;
+  width: 160px;
+  height: 40px;
+  background: green;
+  top: 220px;
+  left: 530px;
+}
+
+
+.Tree-6{
+  position: absolute;
+  width: 180px;
+  height: 40px;
+  background: green;
+  top: 260px;
+  left: 520px;
+}
+
+.Tree-ball1{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100% 90% 110% 100%;
+  background: rgb(227, 13, 216);
+  top: 270px;
+  left: 530px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.Tree-ball2{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100% 90% 110% 100%;
+  background: rgb(255, 81, 0);
+  top: 260px;
+  left: 595px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.Tree-ball3{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100% 90% 110% 100%;
+  background: rgb(0, 255, 242);
+  top: 220px;
+  left: 650px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.Tree-ball4{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100% 90% 110% 100%;
+  background: rgb(200, 255, 0);
+  top: 220px;
+  left: 550px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.Tree-ball5{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100% 90% 110% 100%;
+  background: rgb(29, 87, 236);
+  top: 200px;
+  left: 600px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.Tree-ball6{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100% 90% 110% 100%;
+  background: rgb(140, 24, 97);
+  top: 170px;
+  left: 630px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.Tree-ball7{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100% 90% 110% 100%;
+  background: rgb(13, 191, 161);
+  top: 150px;
+  left: 590px;
+  transform: rotate(90deg);
+  box-shadow: 0 0 0 0.5vin;
+}
+
+.star {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 30px;
+  left: 580px;
+  background: linear-gradient(45deg, #ffcc00, #ffd700);
+  clip-path: polygon(
+    50% 0%, 
+    61% 35%, 
+    98% 35%, 
+    68% 57%, 
+    79% 91%, 
+    50% 70%, 
+    21% 91%, 
+    32% 57%, 
+    2% 35%, 
+    39% 35%
+  );
+  box-shadow: 0 0 20px 5px #ffd700, 0 0 40px 15px #ffcc00, 0 0 60px 25px #ffa500;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px 5px #ffd700, 0 0 40px 15px #ffcc00, 0 0 60px 25px #ffa500;
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 30px 10px #ffd700, 0 0 50px 20px #ffcc00, 0 0 80px 30px #ffa500;
+    transform: scale(1.1);
+  }
+}
+
+.house {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 12px;
+  left: 10px;
+}
+
+/* Roof */
+.roof {
+  position: absolute;
+  width: 220px;
+  height: 50px;
+  background-color: #8B0000; /* Dark red roof */
+  top: 50;
+  left: -7px; /* Slightly wider than the base */
+  border: 2px solid #000;
+}
+
+/* Base of the house */
+.base {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  background-color: #37caff; /* Yellow base */
+  top: 100px;
+  border: 2px solid #000;
+}
+
+/* Door */
+.door {
+  position: absolute;
+  width: 50px;
+  height: 100px;
+  background-color: #ff8000; /* Brown door */
+  bottom: 8px;
+  left: 15px;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+/* Windows */
+.window {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #FFF; /* White windows */
+  border: 2px solid #000;
+}
+
+.window-left {
+  top: 40px;
+  left: 80px;
+}
+
+.window-right {
+  top: 40px;
+  right: 20px;
+}
+
+.smoke-pipe{
+  position: absolute;
+  width: 30px;
+  height: 35px;
+  background-color: #8B0000;
+  top: -80px;
+  left: 155px;
 }
